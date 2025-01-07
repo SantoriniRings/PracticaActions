@@ -3,9 +3,14 @@ name: Hola Mundo
 on: [push]
 
 jobs:
-  hola:
+  test-build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Hola Mundo
-      run: echo "Hola Mundo"
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: ls
+      run: |
+        chmod +x script.sh
+        ./script.sh
